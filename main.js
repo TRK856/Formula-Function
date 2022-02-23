@@ -20,9 +20,6 @@ function MissingSide() {
     FeildsFilled();
 }
 
-// this is a work in progress
-// trying to create a system which detects if 2 feilds are FilledFormulaPartA
-
 function FeildsFilled() {
     let FormulaPartA = +document.getElementById("FormulaPartA").value;
     let FormulaPartB = +document.getElementById("FormulaPartB").value;
