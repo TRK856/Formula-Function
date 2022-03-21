@@ -1,10 +1,15 @@
-document.getElementById("Calculate-Formula").addEventListener("click", MissingSide);
+document.getElementById("Calculate-Formula").addEventListener("click", activate);
 
-function MissingSide() {
+function activate() {
     let FormulaPartA = +document.getElementById("FormulaPartA").value;
     let FormulaPartB = +document.getElementById("FormulaPartB").value;
     let FormulaPartC = +document.getElementById("FormulaPartC").value;
 
+    document.getElementById("Missing-Side").innerHTML = MissingSide(FormulaPartA, FormulaPartB, FormulaPartC);
+    FeildsFilled();
+}
+
+function MissingSide(FormulaPartA, FormulaPartB, FormulaPartC) {
     let MissingSide = 0;
     if(FormulaPartA == 0){
         MissingSide = Math.sqrt( (FormulaPartC ** 2) - (FormulaPartB ** 2));
@@ -15,9 +20,6 @@ function MissingSide() {
     if(FormulaPartC == 0){
         MissingSide = Math.sqrt((FormulaPartA ** 2) + (FormulaPartB ** 2));
     }
-
-    document.getElementById("Missing-Side").innerHTML = MissingSide;
-    FeildsFilled();
 }
 
 function FeildsFilled() {
